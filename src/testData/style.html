@@ -1,0 +1,462 @@
+<style>
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  .not-a4,
+  .a4 {
+    color: black !important;
+  }
+
+  .not-a4 .light,
+  .a4 .light {
+    color: #6c757d !important;
+  }
+
+  .wrap-div {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .need-gap {
+    display: block;
+    word-wrap: break-word;
+    max-width: 40mmpx;
+    white-space: normal;
+  }
+
+  .center {
+    text-align: center
+  }
+
+  .right {
+    text-align: right
+  }
+
+  .border-top {
+    border-top-style: dashed;
+    border-top-width: 1px;
+  }
+
+  .border-bottom {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+  }
+
+  .width40 {
+    width: 40%;
+    float: left;
+  }
+
+  .width20 {
+    width: 20%;
+    float: left;
+    text-align: right;
+  }
+
+  .not-a4 thead>tr:nth-last-child(2)>td {
+    border-top-style: dashed;
+    border-top-width: 1px;
+  }
+
+  .not-a4 thead>tr:last-child>td {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+  }
+
+  .odd-row td {
+    padding-top: 3px;
+  }
+
+  .even-row td {
+    padding-bottom: 3px;
+  }
+
+  table {
+    line-height: 25px;
+  }
+
+  .need-gap {
+    margin-top: 5px;
+  }
+
+  .need-line td {
+    border-top-style: dashed;
+    border-top-width: 1px;
+  }
+
+  .need-line-1st div:first-child {
+    border-top-style: dashed;
+    border-top-width: 1px;
+  }
+
+  .a4 .need-line td {
+    border: none;
+  }
+
+  .a4 span {
+    padding: 5px;
+  }
+
+  .a4 .border-top,
+  .a4 .border-top-td td {
+    border-top-style: solid;
+    border-top-width: 1px;
+  }
+
+  .a4 .border-right,
+  .a4 .border-right-td td {
+    border-right-style: solid;
+    border-right-width: 1px;
+  }
+
+  .a4 .border-left,
+  .a4 .border-left-td td {
+    border-left-style: solid;
+    border-left-width: 1px;
+  }
+
+  .a4 .border-bottom,
+  .a4 .border-bottom-td td {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+  }
+
+  .a4 .td-item-name {
+    width: 50%;
+    border-left-style: solid;
+    border-left-width: 1px;
+  }
+
+  .a4 .td-item-total {
+    width: 20%;
+    border-right-style: solid;
+    border-right-width: 1px;
+  }
+
+  .a4 .td-item-price,
+  .a4 .td-item-qty {
+    width: 15%;
+  }
+
+  .a4 .border-all {
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  @font-face {
+    font-family: EnglishFont;
+    src: url('{{css_path}}english.woff') format('woff');
+  }
+
+  body .receipt_font_en {
+    font-family: EnglishFont;
+    font-size: 15px;
+  }
+
+  @font-face {
+    font-family: TamilFont;
+    src: url('{{css_path}}tamil.woff') format('woff');
+  }
+
+  body .receipt_font_ta {
+    font-family: TamilFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: ArabicFont;
+    src: url('{{css_path}}arabic.woff') format('woff');
+  }
+
+  body .receipt_font_ar {
+    font-family: ArabicFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: BengaliFont;
+    src: url('{{css_path}}bengali.woff') format('woff');
+  }
+
+  body .receipt_font_bn {
+    font-family: BengaliFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: GermanFont;
+    src: url('{{css_path}}english.woff') format('woff');
+  }
+
+  body .receipt_font_de {
+    font-family: GermanFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: SpanishFont;
+    src: url('{{css_path}}english.woff') format('woff');
+  }
+
+  body .receipt_font_es {
+    font-family: SpanishFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: FrenchFont;
+    src: url('{{css_path}}english.woff') format('woff');
+  }
+
+  body .receipt_font_fr {
+    font-family: FrenchFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: GujaratiFont;
+    src: url('{{css_path}}gujarati.woff') format('woff');
+  }
+
+  body .receipt_font_gu {
+    font-family: GujaratiFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: HindiFont;
+    src: url('{{css_path}}hindi.woff') format('woff');
+  }
+
+  body .receipt_font_hi {
+    font-family: HindiFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: JapaneseFont;
+    src: url('{{css_path}}japanese.woff') format('woff');
+  }
+
+  body .receipt_font_ja {
+    font-family: JapaneseFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: KannadaFont;
+    src: url('{{css_path}}kannada.woff') format('woff');
+  }
+
+  body .receipt_font_kn {
+    font-family: KannadaFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: KoreanFont;
+    src: url('{{css_path}}korean.woff') format('woff');
+  }
+
+  body .receipt_font_ko {
+    font-family: KoreanFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: MalayalamFont;
+    src: url('{{css_path}}malayalam.woff') format('woff');
+  }
+
+  body .receipt_font_ml {
+    font-family: MalayalamFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: MarathiFont;
+    src: url('{{css_path}}marathi.woff') format('woff');
+  }
+
+  body .receipt_font_mr {
+    font-family: MarathiFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: OdiaFont;
+    src: url('{{css_path}}odia.woff') format('woff');
+  }
+
+  body .receipt_font_or {
+    font-family: OdiaFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: PunjabiFont;
+    src: url('{{css_path}}punjabi.woff') format('woff');
+  }
+
+  body .receipt_font_pa {
+    font-family: PunjabiFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: RussianFont;
+    src: url('{{css_path}}russian.woff') format('woff');
+  }
+
+  body .receipt_font_ru {
+    font-family: RussianFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: SinhalaFont;
+    src: url('{{css_path}}sinhala.woff') format('woff');
+  }
+
+  body .receipt_font_si {
+    font-family: SinhalaFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: TeluguFont;
+    src: url('{{css_path}}telugu.woff') format('woff');
+  }
+
+  body .receipt_font_te {
+    font-family: TeluguFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: ThaiFont;
+    src: url('{{css_path}}thai.woff') format('woff');
+  }
+
+  body .receipt_font_th {
+    font-family: ThaiFont;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: ChineseFont;
+    src: url('{{css_path}}chinese.woff') format('woff');
+  }
+
+  body .receipt_font_zh-CN {
+    font-family: ChineseFont;
+    font-size: 16px;
+  }
+
+  table {
+    display: inline-block;
+  }
+
+  @font-face {
+    font-family: EnglishCourierFont;
+    src: url('{{css_path}}english_courier.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: GermanFont_Courier;
+    src: url('{{css_path}}english_courier.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: SpanishFont_Courier;
+    src: url('{{css_path}}english_courier.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: FrenchFont_Courier;
+    src: url('{{css_path}}english_courier.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: EnglishFont_JetBrainsMono;
+    src: url('{{css_path}}english_jetbrainsmono.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: GermanFont_JetBrainsMono;
+    src: url('{{css_path}}english_jetbrainsmono.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: SpanishFont_JetBrainsMono;
+    src: url('{{css_path}}english_jetbrainsmono.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: FrenchFont_JetBrainsMono;
+    src: url('{{css_path}}english_jetbrainsmono.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: EnglishFont_Arial;
+    src: url('{{css_path}}english_arial.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: GermanFont_Arial;
+    src: url('{{css_path}}english_arial.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: SpanishFont_Arial;
+    src: url('{{css_path}}english_arial.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: FrenchFont_Arial;
+    src: url('{{css_path}}english_arial.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: EnglishFont_Tahoma;
+    src: url('{{css_path}}english_tahoma.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: GermanFont_Tahoma;
+    src: url('{{css_path}}english_tahoma.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: SpanishFont_Tahoma;
+    src: url('{{css_path}}english_tahoma.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: FrenchFont_Tahoma;
+    src: url('{{css_path}}english_tahoma.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: EnglishFont_Verdana;
+    src: url('{{css_path}}english_verdana.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: GermanFont_Verdana;
+    src: url('{{css_path}}english_verdana.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: SpanishFont_Verdana;
+    src: url('{{css_path}}english_verdana.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: FrenchFont_Verdana;
+    src: url('{{css_path}}english_verdana.woff') format('woff');
+  }
+</style>

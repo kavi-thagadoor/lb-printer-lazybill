@@ -1,0 +1,44 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Status = exports.OsType = void 0;
+var OsType;
+(function (OsType) {
+    OsType[OsType["Auto"] = 0] = "Auto";
+    OsType[OsType["Windows"] = 1] = "Windows";
+    OsType[OsType["Linux"] = 2] = "Linux";
+    OsType[OsType["Mac"] = 3] = "Mac";
+})(OsType || (exports.OsType = OsType = {}));
+var Status;
+(function (Status) {
+    Status[Status["None"] = 0] = "None";
+    Status[Status["Success"] = 1] = "Success";
+    Status[Status["Failed"] = 2] = "Failed";
+    Status[Status["Duplicate"] = 3] = "Duplicate";
+    Status[Status["WaitingForApproval"] = 4] = "WaitingForApproval";
+    Status[Status["Invalid"] = 5] = "Invalid";
+    Status[Status["NotAllowed"] = 6] = "NotAllowed";
+    Status[Status["DataRequired"] = 7] = "DataRequired";
+    Status[Status["UnAvailable"] = 8] = "UnAvailable";
+    Status[Status["RangeNotAllowed"] = 9] = "RangeNotAllowed";
+    Status[Status["NeedOtpVerification"] = 10] = "NeedOtpVerification";
+    Status[Status["UnKnown"] = 11] = "UnKnown";
+    Status[Status["InUse"] = 12] = "InUse";
+    Status[Status["ErrorOccured"] = 13] = "ErrorOccured";
+    Status[Status["InActive"] = 14] = "InActive";
+    Status[Status["Blocked"] = 15] = "Blocked";
+    Status[Status["New"] = 16] = "New";
+    Status[Status["Updated"] = 17] = "Updated";
+    Status[Status["Running"] = 18] = "Running";
+    Status[Status["LimitExceeded"] = 19] = "LimitExceeded";
+    Status[Status["EmailRequired"] = 20] = "EmailRequired";
+    Status[Status["NoChange"] = 21] = "NoChange";
+    Status[Status["SerialNumberRequired"] = 22] = "SerialNumberRequired";
+    Status[Status["InventoryRequired"] = 23] = "InventoryRequired";
+    Status[Status["NeedBRN"] = 24] = "NeedBRN";
+    Status[Status["NeedConfirmation"] = 25] = "NeedConfirmation";
+    Status[Status["SuccessWithMoreAction"] = 26] = "SuccessWithMoreAction";
+    Status[Status["ResetPwd"] = 27] = "ResetPwd";
+    Status[Status["MinimumRequired"] = 28] = "MinimumRequired";
+    Status[Status["Custom"] = 29] = "Custom";
+})(Status || (exports.Status = Status = {}));
+//# sourceMappingURL=types.js.map
